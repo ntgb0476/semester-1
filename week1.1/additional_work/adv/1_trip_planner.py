@@ -10,6 +10,11 @@ destination = input("Where are you going to? ")
 distance_miles_input = input("How many miles will you travel? ")
 time_hours_input = input("How many hours will the journey take? ")
 
+try:
+    distance_miles = int(distance_miles_input)
+except ValueError:
+    print("That distance is not a valid number.")
+
 # TODO: convert distance_miles_input and time_hours_input to numbers
 # TODO: calculate the average speed in miles per hour
 # TODO: print a summary message using an f-string
