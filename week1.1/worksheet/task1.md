@@ -11,15 +11,15 @@ You can complete this task on the worksheet pdf if you prefer.
 |     Command                 |     Explanation    |
 |-----------------------------|--------------------|
 |     pwd                     | shows the current location of the terminal |
-|     ls                      | |
-|     cd directory_name       | |
-|     cd ..                   | |
-|     cd -                    | |
-|     mkdir directory_name    | |
-|     touch filename          | |
-|     git status              | |
-|     git add -A              | |
-|     git commit -m ""        | |
-|     git push                | |
-|     git pull                | |
+|     ls                      | lists all files in the current directory. Does not show hidden files|
+|     cd directory_name       | moves into a directory |
+|     cd ..                   | moves up one directory |
+|     cd -                    | moves to the previous directory($OLDPWD) |
+|     mkdir directory_name    | makes a directory |
+|     touch filename          | makes an empty file |
+|     git status              | shows the git status. It shows modified files, staged files, new un-ignored files |
+|     git add -A              | Adds every modified file and new file to the staging area |
+|     git commit -m ""        | commits with a message |
+|     git push                | pushes commits to upstream (origin by default) |
+|     git pull                | pulls commits from upsteam (origin by default) |
 
