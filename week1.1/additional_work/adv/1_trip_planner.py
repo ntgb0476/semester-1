@@ -15,7 +15,13 @@ try:
 except ValueError:
     print("That distance is not a valid number.")
 
-# TODO: convert distance_miles_input and time_hours_input to numbers
-# TODO: calculate the average speed in miles per hour
-# TODO: print a summary message using an f-string
+try:
+    time_hours_input = int(time_hours_input)
+except ValueError:
+    print("That time is not a valid number.")
+
+average_speed = distance_miles / time_hours_input
+
+print(f"To travel {distance_miles} miles in {time_hours_input} hours you must go {round(average_speed,2)} mph.")
+
 # Extension: add validation for zero or negative values
