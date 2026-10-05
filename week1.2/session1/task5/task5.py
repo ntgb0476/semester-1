@@ -10,10 +10,23 @@ print(rivers)
 
 # Add two new entries to the rivers database
 
+rivers.update({"Nottingham": "Trent", "Bristol": "Severn"})
+print(rivers)
+
 # Display all the keys
+
+print(rivers.keys())
 
 # Display all the values
 
+print(rivers.values())
+
 # Display all the key:value pairs, as tuples
 
+for key in rivers.keys():
+    print((key, rivers[key]))
+
 # Delete an entry from the rivers database
+
+rivers.pop("London")
+print(rivers)

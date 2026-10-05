@@ -15,6 +15,17 @@ print(food)
 
 # Add an item to fruit
 
+fruit.add("pear")
+
 # Remove an item from vegetables
 
+vegetables.remove("leek")
+
 # Find and display symmetric difference of the two sets
+
+print( fruit, vegetables)
+
+food = fruit.union(vegetables)
+both = fruit.intersection(vegetables)
+
+print(fruit ^ vegetables)
