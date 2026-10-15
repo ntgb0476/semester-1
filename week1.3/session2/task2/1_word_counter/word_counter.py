@@ -1,6 +1,6 @@
 # Week 1.3, Session 2: Word Counter
 
-# We want to read in a text file, and calculate how many words are in it. 
+# We want to read in a text file, and calculate how many words are in it.
 # You can use any of the .txt files to test this - or even make your own.
 
 # open and read the file
@@ -15,3 +15,12 @@
 # story.txt - 290
 # story2.txt - 326
 # glasses.txt - 210
+
+
+file_name = input("Input a file name: ")
+# file_name = "story.txt"
+
+with open(file_name) as f:
+    file = f.read()
+
+print(len(file.split()))

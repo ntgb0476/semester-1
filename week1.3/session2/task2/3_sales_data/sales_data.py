@@ -22,3 +22,40 @@
 # - Sales amounts are stored as strings - you'll need to convert to int() for math
 # - For finding the highest selling widget, use a dictionary to count units sold per product
 # - For average, sum all sales amounts and divide by number of rows
+
+with open("sales.csv") as f:
+    file = f.read()
+
+file = file.split("\n")
+
+days = {}
+
+for line_number in range(len(file)):
+    line = file[line_number]
+    values = line.split(",")
+    if line_number == 0:
+        headers = values
+    else:
+        days.update({values[0]: {headers[n]: values[n] for n in range(len(headers))}})
+
+
+sales = [day["Sales_Amount"] for (date, day) in days.items()]
+
+max_sales = 0
+widgets = {}
+all_sales = []
+for date, day in days.items():
+    if int(day["Sales_Amount"]) > int(max_sales):
+        max_sales = day["Sales_Amount"]
+        max_sales_date = date
+    widgets[day["Product"]] = int(widgets.get(day["Product"], 0)) + int(
+        day["Sales_Amount"]
+    )
+    all_sales.append(int(day["Sales_Amount"]))
+
+print(sum(all_sales) / len(all_sales))
+
+print(max(widgets))
+
+print(widgets)
+print(f"Max sales({max_sales}) on {max_sales_date}.")
