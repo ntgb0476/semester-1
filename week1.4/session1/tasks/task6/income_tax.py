@@ -33,10 +33,25 @@ def income_tax_calculator(annual_income):
         one decimal point. You can use the round() function,
         e.g round(tax, 1) 0.0 if annual_income is not a positive integer.
     """
+    tax = 0
+    remaining = annual_income
+    tax_percentages = [0.45, 0.4, 0.2, 0]
+    tax_widths = [(125140 - 50271), (50270 - 12571), 12570]
+    while remaining:
+        if tax_widths:
+            tax_width = tax_widths.pop()
+            tax_percentage = tax_percentages.pop()
+            if remaining - tax_width > 0:
+                tax += tax_width * tax_percentage
+                remaining -= tax_width
+            else:
+                tax += remaining * tax_percentage
+                remaining = 0
+    return tax
 
 
 # Check if the following lines produce the correct output
-print(income_tax_calculator(12000))     # 0.0
-print(income_tax_calculator(14000))     # 286.0
-print(income_tax_calculator(25000))     # 2486.0
-print(income_tax_calculator(100000))    # 27432.0
+print(income_tax_calculator(12000))  # 0.0
+print(income_tax_calculator(14000))  # 286.0
+print(income_tax_calculator(25000))  # 2486.0
+print(income_tax_calculator(100000))  # 27432.0

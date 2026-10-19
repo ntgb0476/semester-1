@@ -1,8 +1,8 @@
-# Week 4, Session 1: 
+# Week 4, Session 1:
 
-# To convert a temperature from Celsius to Fahrenheit. 
+# To convert a temperature from Celsius to Fahrenheit.
 # There are two main tasks involved:
-#   (1) validating the temperature 
+#   (1) validating the temperature
 #   (2) converting Celsius to Fahrenheit.
 
 # These are now defined in a separate function.
@@ -13,7 +13,6 @@
 # is within the range, otherwise print "The temperature is out of range."
 
 
-
 def valid_temperature(temperature):
     if temperature >= -100 and temperature <= 100:
         return True
@@ -22,7 +21,7 @@ def valid_temperature(temperature):
 
 
 def celsius_to_fahrenheit(celsius):
-    fahrenheit = (celsius * 9/5) + 32
+    fahrenheit = (celsius * 9 / 5) + 32
     return fahrenheit
 
 
@@ -31,3 +30,8 @@ def celsius_to_fahrenheit(celsius):
 celsius = float(input("Enter temperature in Celsius: "))
 
 # Complete the rest of the code here
+
+if valid_temperature(celsius):
+    print(celsius_to_fahrenheit(celsius))
+else:
+    print("The temperature is out of range.")

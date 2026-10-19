@@ -1,16 +1,21 @@
 # Week 4, Session 1
 
-# You are given the function mystery_func. 
+# You are given the function mystery_func.
 # Inspect the code in the function
 # Your task is to write a corresponding docstring
-# - what the function does 
+# - what the function does
 # - what is the input data and type
 # - what is the return value and type
 
 
 # function implementation
 
+
 def mystery_func(string):
+    """
+    Returns the number of upper case and lower case numbers.
+    reu
+    """
     upper = 0
     lower = 0
 
