@@ -17,10 +17,11 @@ def digits_sum(number):
     Returns:
         int: The sum of the digits of the input integer.
     """
-    # complete your code here
-    # base case
-
-    # recursive case
+    num_list = [int(n) for n in str(number)]
+    if len(num_list) == 1:
+        return number
+    else:
+        return digits_sum(sum(num_list))
 
 
 # check if correct output is produced

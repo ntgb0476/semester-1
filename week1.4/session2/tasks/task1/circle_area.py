@@ -2,8 +2,8 @@
 
 # Define a function circle_area that takes 2 arguments:
 #   (1) radius and
-#   (2) pi_value 
-#   
+#   (2) pi_value
+#
 #   The function returns the area of a circle. The argument pi_value
 #   is optional. The formula for the area of a circle is
 #   area = pi * radius * radius.
@@ -13,11 +13,11 @@
 # either (1) 3.14, (2) 3.142, (4) 3.1428, or (4) 3.142857 and observed
 # the output produced the the function is used.
 
+import math
 
-def circle_area(radius, pi_value):  # assign a default value to pi_value
-    # complete the code here
 
-    return area
+def circle_area(radius, pi_value=math.pi):  # assign a default value to pi_value
+    return pi_value * radius**2
 
 
 # Check if correct output is produced
@@ -27,4 +27,3 @@ print(circle_area(22.5))
 
 # For those knowing how to import a module, you could import the math module
 # and then use math.pi as the default value for pi_value.
-

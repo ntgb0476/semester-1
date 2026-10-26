@@ -11,6 +11,7 @@ import calendar
 # Run the program and observe the output.
 
 print(calendar.month(2025, 10))
+print(calendar.calendar(2026))
 
 # Your task is to go to https://docs.python.org/3/library/calendar.html,
 # and have a look at other optional arguments for the month function,
