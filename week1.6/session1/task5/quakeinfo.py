@@ -6,3 +6,11 @@
 
 # See README.md for full details of what is required and what
 # program output should look like
+
+from quake import Quake
+from dataset import QuakeDataset
+from feed import QuakeFeed
+
+dataset = QuakeDataset(feed=QuakeFeed("4.5", "week"))
+dataset.read_feed()
+print(dataset)
