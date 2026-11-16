@@ -2,7 +2,8 @@
 
 import random
 
-random.seed(10)
+# random.seed(5)
+# When seed is set the results of randint become deterministic based on the seed.
 
 num1 = random.randint(1, 100)
 num2 = random.randint(1, 100)
