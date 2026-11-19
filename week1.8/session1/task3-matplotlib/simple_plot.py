@@ -1,15 +1,23 @@
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#   "matplotlib",
+# ]
+# ///
+import matplotlib.pyplot as plt
 
-import matplotlib.pyplot as plt  # import library
+x = [k for k in range(10)]
+y_1 = [k**2 for k in x]
+y_2 = [k**3 for k in x]
 
-x = [ k for k in range(10) ]  # create a range for the data
-y = [ k*k for k in x ]      # create a simple function y=x^2
+plt.plot(x, y_1)
+plt.plot(x, y_2)
 
-plt.plot(x,y)  # create a 2d plot
+plt.xlabel("x")
+plt.ylabel("y_1=x^2")
+plt.ylabel("y_2=x^3")
 
-plt.xlabel('x')
-plt.ylabel('y=x^2')  # annotate
-
-plt.show()  # display
+plt.show()
 
 # Test the example as is on the slides
 # - Modify the data and the range

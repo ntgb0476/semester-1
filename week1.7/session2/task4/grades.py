@@ -21,7 +21,11 @@ def read_marks(filename):
         infile.readline()  # skip column headings
         for line in infile:
             name, mark = line.strip().split(",")
-            data[name] = mark
+            try:
+                data[name] = int(mark)
+            except TypeError:
+                raise MarkError
+
         return data
 
 
@@ -35,14 +39,17 @@ def grade(mark):
 
     MarkError is raised if the provided mark is not valid.
     """
-    if 0 <= mark < 40:
-        return "Fail"
-    elif 40 <= mark <= 70:
-        return "Pass"
-    elif 70 <= mark <= 100:
-        return "Distinction"
-    else:
-        raise MarkError("marks must be in range 0-100")
+    try:
+        if 0 <= mark < 40:
+            return "Fail"
+        elif 40 <= mark < 70:
+            return "Pass"
+        elif 70 <= mark <= 100:
+            return "Distinction"
+        else:
+            raise MarkError("marks must be in range 0-100")
+    except TypeError:
+        raise MarkError
 
 
 if __name__ == "__main__":
