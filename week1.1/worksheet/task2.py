@@ -15,7 +15,7 @@ monthy_payed_in = input("Input amount you will pay in each month: ")
 try:
     monthy_payed_in = int(monthy_payed_in)
 except:
-    print(f"{monthy_payed_in} is not a vaild number.")
+    print(f"Invalid amount, {monthy_payed_in} is not a vaild number.")
     exit()
 
 # Calculate the total amount of money they will have saved by the end of the year (amount per month multiplied by 12).
@@ -37,3 +37,4 @@ round = "%.2f" % round(total, 2)
 # https://stackoverflow.com/questions/19986662/rounding-a-number-in-python-but-keeping-ending-zeros
 
 print(f"At the end of the year your balance will be £{round}")
+
