@@ -1,0 +1,16 @@
+[project]
+name = "task4-combined"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ntgb0476", email = "ntgb0476@leeds.ac.uk" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "pandas>=3.1.1",
+]
+
+[dependency-groups]
+   dev = ["jupyter", "ipykernel"]

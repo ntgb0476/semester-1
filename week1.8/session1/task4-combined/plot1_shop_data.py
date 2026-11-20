@@ -1,24 +1,34 @@
-'''
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#   "matplotlib",
+#   "pandas"
+# ]
+# ///
+"""
 This is the recommended start point for matplotlib, and should help you to build up skills.
 
 The difficult part of most plotting is working out what the dataframe needs to look like to get a good plot, and this will help you with that!
 
 This first file is a worked example of creating some graphs - there are activities at the bottom for you to practice.
-'''
+"""
 
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 
 # reading data & converting date into a datetime
 shop_data = pd.read_csv("shop_sales_data_one_month.csv")
-shop_data['Date'] = pd.to_datetime(shop_data['Date'])
+shop_data["Date"] = pd.to_datetime(shop_data["Date"])
 
 # Step 1: check that the data looks sensible - you should do this often!:
-print(shop_data.head())
+print("Initial df")
+print(shop_data)
 
 # Step 2: add a column 'Total_Price' which is equal to Units_Sold * Unit_Price
 
 shop_data["Total_Price"] = shop_data["Units_Sold"] * shop_data["Unit_Price"]
+print("df with Total_Price")
+print(shop_data)
 
 # Step 3: In order to make our first graph, we want to group everything together by Dat
 
@@ -26,6 +36,7 @@ shop_data["Total_Price"] = shop_data["Units_Sold"] * shop_data["Unit_Price"]
 # .sum() tells Pandas to add together all the values - this means we can easily get the sales/day.
 # We use the kwarg numeric_only=True to make sure we don't get errors.
 total_daily_sales = shop_data.groupby("Date").sum(numeric_only=True)
+print("group by date and sum")
 print(total_daily_sales)
 
 
@@ -34,9 +45,11 @@ print(total_daily_sales)
 # first, we get just the column we want out of the table. Because we grouped by the Date, the date is now the index row (first row) so that is already in there.
 # again, you would usually print here to check what your dataframe looks like to help work out what filtering to do!
 total_daily_sales = total_daily_sales["Total_Price"]
+print("take only the Total_Price column")
+print(total_daily_sales)
 
 # I like to check I have the right data in my table so I usually print it here before I plot the graph
-print(total_daily_sales)
+# print(total_daily_sales)
 
 # and once you're happy that you have a dataframe with the right stuff in it, you can plot it:
 total_daily_sales.plot(kind="line")
@@ -63,5 +76,7 @@ plt.show()
 
 # Create a pie chart to show sales per product
 
-
-
+sales_per_product = shop_data.groupby("Product").sum(numeric_only=True)
+sales_per_product = sales_per_product["Total_Price"]
+sales_per_product.plot(kind="pie")
+plt.show()

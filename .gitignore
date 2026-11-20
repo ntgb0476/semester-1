@@ -1,2 +1,5 @@
 __pycache__
 random.txt
+.venv
+.ipynb_checkpoints
+.python-version
